@@ -45,7 +45,7 @@ public class AnalyseTextService extends AnnotationClient{
             GetMethod getMethod = new GetMethod(API_URL + "en/annotate/?" +
 					"confidence=" + CONFIDENCE
 					+ "&support=" + SUPPORT
-                                        + "&type" + TYPE
+                                        + "&types" + TYPE
                                         + "&text=" + URLEncoder.encode(text.text(), "utf-8")
                                         );
             getMethod.addRequestHeader(new Header("Accept", "application/json"));
