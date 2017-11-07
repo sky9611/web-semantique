@@ -27,9 +27,9 @@ import java.util.List;
 
 public class AnalyseTextService extends AnnotationClient{
     private final static String API_URL = "http://model.dbpedia-spotlight.org/";
-    private static final double CONFIDENCE = 0.9;
+    private static final double CONFIDENCE = 0.5;
     private static final int SUPPORT = 0;
-    private static final String TYPE = "colour";
+    private static final String TYPE = "person";
     private static final String FORMAT = "application/json";
    
     /**
@@ -45,7 +45,7 @@ public class AnalyseTextService extends AnnotationClient{
             GetMethod getMethod = new GetMethod(API_URL + "en/annotate/?" +
 					"confidence=" + CONFIDENCE
 					+ "&support=" + SUPPORT
-                                        + "&types" + TYPE
+                                        + "&types=" + TYPE
                                         + "&text=" + URLEncoder.encode(text.text(), "utf-8")
                                         );
             getMethod.addRequestHeader(new Header("Accept", "application/json"));
@@ -80,9 +80,9 @@ public class AnalyseTextService extends AnnotationClient{
     }
     public static void main(String[] args) throws Exception{
         AnalyseTextService a = new AnalyseTextService();
-        File input = new File("D:\\documents\\INSA\\4IF\\Web Sémantique\\in.txt");
-        File output = new File("D:\\documents\\INSA\\4IF\\Web Sémantique\\out.txt");
+        File input = new File("D:\\My Documents\\web-semantique\\in.txt");
+        File output = new File("D:\\My Documents\\web-semantique\\out.txt");
         a.evaluate(input, output);
-
+        
     }
 }
