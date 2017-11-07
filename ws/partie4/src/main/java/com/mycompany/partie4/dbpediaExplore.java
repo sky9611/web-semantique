@@ -161,13 +161,30 @@ public class dbpediaExplore {
         s3 = parameterizedRequest(uri, "http://dbpedia.org/ontology/starring");
         s4 = parameterizedRequest(uri, "http://dbpedia.org/ontology/director");
         s5 = parameterizedRequest(uri, "http://dbpedia.org/ontology/country");
-        
+        int isAFilm = 5;
+        if(s1.equals("")){
+            isAFilm--;
+        } if(s2.equals("")){
+            isAFilm--;
+        } if(s3.equals("")){
+            isAFilm--;
+        } if(s4.equals("")){
+            isAFilm--;
+        } if(s5.equals("")){
+            isAFilm--;
+        } 
+        /*
         if(s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("") || s5.equals("")) {
             return false;
         } else {
             return true;
         }
-        
+        */
+        if(isAFilm<=2){
+            return false; 
+        }else{
+            return true;
+        }
     }
     
     public static String filmInfo(String uri) throws ParseException {
