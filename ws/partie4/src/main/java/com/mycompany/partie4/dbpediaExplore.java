@@ -153,7 +153,7 @@ public class dbpediaExplore {
             return false;
         }
     }
-    
+    //yyyyyyyyy
     public static boolean isfilm(String uri) {
         String s1,s2,s3, s4, s5;
         s1 = parameterizedRequest(uri, "http://dbpedia.org/property/studio");
